@@ -1,0 +1,288 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*::selection {
+  background-color: rgb(0, 120, 120);
+}
+
+body {
+  width: auto;
+  height: auto;
+  background-color: #121212;
+}
+
+header {
+  background-color: #222222;
+  width: 100%;
+  height: 15vh;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+  position: relative;
+}
+
+header nav h1 {
+  font-size: 3.5rem;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav ul > li {
+  color: #fff;
+  padding: 1rem;
+  transition: 150ms ease-in-out;
+  font-size: 1.2rem;
+}
+
+header nav ul > li > a {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+header nav ul > li:hover {
+  transform: scale(1.1);
+}
+
+.button-create {
+  padding: 1rem;
+  margin: 20px;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: rgb(255 255 255 / 0.9);
+  color: #121212;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+  text-transform: capitalize;
+}
+
+.button-create:hover {
+  transform: scale(1.1);
+  background-color: rgb(255 255 255 / 1);
+}
+
+main {
+  height: fit-content;
+  width: auto;
+  display: grid;
+  place-items: center;
+  gap: 3rem;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  width: 80vw;
+  height: auto;
+  background-color: #121212;
+  margin: auto;
+}
+
+.wrap-content {
+  width: inherit;
+  height: inherit;
+  margin: auto;
+}
+
+.main-title {
+  font-size: 3rem;
+  color: rgb(255 255 255 / 0.9);
+  width: auto;
+  height: auto;
+  margin: 40px;
+  text-transform: capitalize;
+  line-height: 3rem;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #fff;
+  background-color: #222222;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 1px rgb(124, 124, 124);
+  width: 30vw;
+  height: fit-content;
+  transition: 150ms ease-in;
+}
+
+.card-counter {
+  font-size: 0.8rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.card-counter::before {
+  content: "Card Count: ";
+  font-size: 0.8rem;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 4px 0px #fff;
+  transform: scale(1.05);
+}
+
+.card-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.card-head h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.card-head .close-btn {
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+
+.card-head .close-btn:hover {
+  transform: scale(1.2);
+}
+
+.card-body {
+  line-height: 2rem;
+  color: rgb(255 255 255 / 0.5);
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+/* Burger button */
+
+.burger {
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  display: none;
+  transition: 200ms ease-in-out;
+}
+
+.burger > div {
+  margin: 5px;
+  background-color: #fff;
+  width: 40px;
+  height: 4px;
+  transition: 250ms ease-in;
+}
+
+/* Burger on click animation */
+
+.toggle .row-1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.toggle .row-2 {
+  opacity: 0;
+}
+
+.toggle .row-3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  main {
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    margin-top: 20px;
+  }
+  .card {
+    width: 80vw;
+  }
+
+  .button-create {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  nav {
+    height: 10vh;
+  }
+
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90%;
+    width: 55vw;
+    height: fit-content;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 0.5rem;
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  header nav ul > li {
+    margin: 20px;
+  }
+
+  header nav ul > li > a {
+    margin: 0px;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    width: 80vw;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+}
+
+/*Active classes*/
+
+.is-active {
+  display: flex;
+  z-index: 10;
+}
